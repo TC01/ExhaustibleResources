@@ -102,17 +102,12 @@ namespace ExhaustibleResources
         {
             ResourceLevelType level = tile.getResourceLevel(type, false);
             InfoResourceLevel levelInfo = server.infos().resourceLevel(level);
-            int nextID = levelInfo.miType -= 1;
 
-            // Do not go below "traces" as our minimum threshold
-            if (nextID <= 1)
-            {
-                nextID = 1;
-            }
+            // Get the level to deplete to.
+            InfoResourceLevel nextInfo = GetNextResourceLevelInfo(server, levelInfo);
+            ResourceLevelType nextLevel = nextInfo.meType;
 
             // Now, deplete the resources!
-            ResourceLevelType nextLevel = (ResourceLevelType)nextID;
-            InfoResourceLevel nextInfo = server.infos().resourceLevel(nextLevel);
             tile.setResourceLevel(type, nextLevel);
             
             // Fire some notifications.
@@ -137,6 +132,41 @@ namespace ExhaustibleResources
 
         }
 
+        private InfoResourceLevel GetNextResourceLevelInfo(GameServer server, InfoResourceLevel levelInfo)
+        {
+            // There has got to be a better way to do this. Where's our old (civ 4) friend getInfoTypeFromString?
+            string nextLevelType = GetNextResourceLevelString(server, levelInfo);
+            foreach (InfoResourceLevel testLevelInfo in server.infos().resourceLevels())
+            {
+                if (testLevelInfo.mzType == nextLevelType)
+                {
+                    return testLevelInfo;
+                }
+            }
+            return server.infos().resourceLevel((ResourceLevelType)0);
+        }
+
+        // Hardcode the next resource level ID; I'm not sure what order they get loaded in.
+        private string GetNextResourceLevelString(GameServer server, InfoResourceLevel levelInfo)
+        {
+            string type = levelInfo.mzType;
+            switch (type)
+            {
+                case "RESOURCELEVEL_NONE":
+                    return "RESOURCELEVEL_NONE";
+                case "RESOURCELEVEL_TRACE":
+                    return "RESOURCELEVEL_TRACE";
+                case "RESOURCELEVEL_LOW":
+                    return "RESOURCELEVEL_TRACE";
+                case "RESOURCELEVEL_MEDIUM":
+                    return "RESOURCELEVEL_LOW";
+                case "RESOURCELEVEL_HIGH":
+                    return "RESOURCELEVEL_HIGH";
+                default:
+                    return "RESOURCELEVEL_NONE";
+            }
+        }
+
         // Use the events system to fire off a message, depending on the type of resource.
         // This requires a hardcoded resource -> event mapping, sadly, since we cannot seem to add XML fields.
         private string GetExhaustionEvent(GameServer server, ResourceType resource)
@@ -146,6 +176,7 @@ namespace ExhaustibleResources
             {
                 case "RESOURCE_IRON":
                     return "EVENTGAME_EXHAUSTED_IRON";
+                // This case doesn't seem to work properly. I am not sure why.
                 case "RESOURCE_ALUMINUM":
                     return "EVENTGAME_EXHAUSTED_ALUMINUM";
                 case "RESOURCE_SILICON":
