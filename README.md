@@ -29,18 +29,34 @@ Exhaustible Resources implements one new feature. At the end of every day (that
 is, 24 hour cycle), the game will randomly iterate over all tiles with resources
 that have buildings mining them.
 
-Currently, there is a 10% chance
+Currently, there is a 10% chance (but this is configurable and subject to change
+as necessary) that a resource being mined, quarried, or pumped will be "exhausted"
+down to the next resource level. So a High Iron deposit may suddenly become a
+Medium Iron Deposit, or a Low Water deposit will become a Trace Water deposit.
+
+Deposits will not go below Trace.
 
 ### Limitations
+
+Most of the limitations are, unfortunately, to do with telling the player what's
+happening. For more accurate information about resource exhaustion, check the Offworld log
+file in e.g. C:\Users\username\Documents\My Games\Offworld\Logs\
 
 * The event messages do not tell you *where* your mines depleted a resource, they
 simply say what resource it occurred at. I wasn't able to figure out how to trigger
 an event *at* a tile.
 
-(For more accurate information about resource exhaustion, check the Offworld log
-file in e.g. C:\Users\username\Documents\My Games\Offworld\Logs\).
+* The notifications (ab)use the game's event system, meaning I believe they will
+fire for all players.
+
+* It was my intention to add a Game Option for enabling this feature, but the list
+of GameOptions are hardcode as an enum in the DLL, and it wasn't immediately
+apparent how I could override that.
 
 ## Links
+
+* [Github Repository](https://github.com/TC01/ExhaustibleResources): the mod's git
+repository.
 
 ## Credits
 
