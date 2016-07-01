@@ -40,6 +40,7 @@ namespace ExhaustibleResources
                 }
             }
 
+            // This may be redundant.
             base.Update();
         }
 
@@ -58,11 +59,12 @@ namespace ExhaustibleResources
                     BuildingServer building = server.buildingServer(tile.getBuildingID());
 
                     // Loop through all resources. If the building on the tile wants them, we have a chance to exhaust.
+                    // (And if, you know, the resource is actually on the tile).
                     foreach (InfoResource resource in server.infos().resources())
                     {
                         ResourceType type = resource.meType;
                         InfoBuilding buildingInfo = server.infos().building(building.getType());
-                        if (buildingInfo.maiResourceMining[(int)resource.miType] > 0)
+                        if (buildingInfo.maiResourceMining[(int)resource.miType] > 0 && tile.getResourceLevel(type, false) != ResourceLevelType.NONE)
                         {
                             bool check = CheckExhaustion(server);
                             if (check)
@@ -110,11 +112,14 @@ namespace ExhaustibleResources
 
             // Now, deplete the resources!
             ResourceLevelType nextLevel = (ResourceLevelType)nextID;
+            InfoResourceLevel nextInfo = server.infos().resourceLevel(nextLevel);
             tile.setResourceLevel(type, nextLevel);
             
-            // Fire some notifications and updates.
-            server.doUpdate();
-            UnityEngine.Debug.Log("[Exhaustible Resources] Reduced resource " + resource.mzType + " in tile at x = " + tile.getX().ToString() + ", y = " + tile.getY().ToString() + " to level " + levelInfo.mzType);
+            // Fire some notifications.
+            //server.doUpdate();
+            string x = tile.getX().ToString();
+            string y = tile.getY().ToString();
+            UnityEngine.Debug.Log("[Exhaustible Resources] Reduced resource " + resource.mzType + " in tile at x = " + x + ", y = " + y + " from " + levelInfo.mzType + " to " + nextInfo.mzType);
             
             // Get the hardcoded event to fire, get its ID, then fire it.
             string eventName = GetExhaustionEvent(server, type);
