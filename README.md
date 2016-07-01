@@ -25,8 +25,8 @@ Offworld moddability, I decided to see what I could do to change that.
 
 ## Features
 
-Exhaustible Resources implements one new feature. At the end of every day (that
-is, 24 hour cycle), the game will randomly iterate over all tiles with resources
+Exhaustible Resources implements one new feature. At the end of every Martian day,
+the game will randomly iterate over all tiles with resources
 that have buildings mining them.
 
 Currently, there is a 10% chance (but this is configurable and subject to change
