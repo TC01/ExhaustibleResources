@@ -161,7 +161,7 @@ namespace ExhaustibleResources
                 case "RESOURCELEVEL_MEDIUM":
                     return "RESOURCELEVEL_LOW";
                 case "RESOURCELEVEL_HIGH":
-                    return "RESOURCELEVEL_HIGH";
+                    return "RESOURCELEVEL_MEDIUM";
                 default:
                     return "RESOURCELEVEL_NONE";
             }
@@ -176,7 +176,6 @@ namespace ExhaustibleResources
             {
                 case "RESOURCE_IRON":
                     return "EVENTGAME_EXHAUSTED_IRON";
-                // This case doesn't seem to work properly. I am not sure why.
                 case "RESOURCE_ALUMINUM":
                     return "EVENTGAME_EXHAUSTED_ALUMINUM";
                 case "RESOURCE_SILICON":
@@ -184,7 +183,7 @@ namespace ExhaustibleResources
                 case "RESOURCE_CARBON":
                     return "EVENTGAME_EXHAUSTED_CARBON";
                 case "RESOURCE_WATER":
-                    return "EVENTGAME_EXHAUSTED_IRON";
+                    return "EVENTGAME_EXHAUSTED_WATER";
                 default:
                     return "EVENTGAME_NONE";
             }

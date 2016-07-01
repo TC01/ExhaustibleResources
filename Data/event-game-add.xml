@@ -20,7 +20,7 @@
 	<Entry>
 		<zType>EVENTGAME_EXHAUSTED_ALUMINUM</zType>
 		<Name>TEXT_EVENTGAME_EXHAUSTED_ALUMINUM</Name>
-		<Message>TEXT_EVENTGAME_EXHAUSTED_IRON_ALUMINUM</Message>
+		<Message>TEXT_EVENTGAME_EXHAUSTED_ALUMINUM_MESSAGE</Message>
 		<MessageCenter>NONE</MessageCenter>
 		<MessageDelay>NONE</MessageDelay>
 		<Audio/>
