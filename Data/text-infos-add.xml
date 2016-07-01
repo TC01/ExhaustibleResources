@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<Root>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_IRON</zType>
+		<English>Depleted Iron Deposit</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_IRON_MESSAGE</zType>
+		<English>An iron mine has extracted a substantial amount of the available ore! Soon, there may be only traces left...</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_ALUMINUM</zType>
+		<English>Depleted Aluminum Deposit</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_ALUMINUM_MESSAGE</zType>
+		<English>An aluminum mine has extracted a substantial amount of the available ore! Soon, there may be only traces left...</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_SILICON</zType>
+		<English>Depleted Silicon Deposit</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_SILICON_MESSAGE</zType>
+		<English>A quarry has extracted a substantial amount of the available silicon! Soon, there may be only traces left...</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_CARBON</zType>
+		<English>Depleted Carbon Deposit</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_CARBON_MESSAGE</zType>
+		<English>A quarry has extracted a substantial amount of the available carbon! Soon, there may be only traces left...</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_WATER</zType>
+		<English>Depleted Water Deposit</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTGAME_EXHAUSTED_WATER_MESSAGE</zType>
+		<English>A water pump has extracted a substantial amount of the deposit! Soon, there may be only traces left...</English>
+		<British/>
+		<German/>
+		<Russian/>
+		<French/>
+		<Spanish/>
+		<Korean/>
+		<Polish/>
+		<Brazilian/>
+		<Chinese/>
+	</Entry>
+</Root>
