@@ -117,8 +117,9 @@ namespace ExhaustibleResources
             UnityEngine.Debug.Log("[Exhaustible Resources] Reduced resource " + resource.mzType + " in tile at x = " + x + ", y = " + y + " from " + levelInfo.mzType + " to " + nextInfo.mzType);
             
             // Get the hardcoded event to fire, get its ID, then fire it.
+            // Regrettably, there is more hardcoding here. Don't fire the event for Trace -> * or None -> * decays (they aren't real).
             string eventName = GetExhaustionEvent(server, type);
-            if (eventName != "EVENTGAME_NONE")
+            if (eventName != "EVENTGAME_NONE" || levelInfo.mzType == "RESOURCELEVEL_TRACE" || levelInfo.mzType == "RESORUCELEVEL_NONE")
             {
                 foreach (InfoEventGame infoEvent in server.infos().eventGames())
                 {
