@@ -13,11 +13,6 @@ namespace ExhaustibleResources
         // This is horrendously inefficient. But it should work.
         int currentDay = -1;
 
-        // For now, hardcode a default probability for resources to deplete.
-        // If we could add XML tags (which we *should* be able to were it not for this mod entry point interface,
-        // since we have the source code...), I would make this dependent on which faction you were playing as.
-        int exhaustThreshold = 10;
-
         public override void Initialize()
         {
             UnityEngine.Debug.Log("[Exhaustible Resources] Loading Exhaustible Resources.");
@@ -69,7 +64,7 @@ namespace ExhaustibleResources
                         InfoBuilding buildingInfo = server.infos().building(building.getType());
                         if (buildingInfo.maiResourceMining[(int)resource.miType] > 0)
                         {
-                            bool check = CheckExhaustion();
+                            bool check = CheckExhaustion(server);
                             if (check)
                             {
                                 ExhaustTileResource(server, tile, type, resource);
@@ -80,14 +75,20 @@ namespace ExhaustibleResources
             }
         }
 
-        private bool CheckExhaustion()
+        // Look up the global int threshold.
+        // Ideally, this would be a per-hq or per-building knob.
+        private int GetExhaustThreshold(GameServer server)
         {
-            Random random = new Random();
-            
-            int result = random.Next(100);
+            int threshold = server.infos().getGlobalInt("EXHAUSTIBLE_RESOURCES_DEFAULT_THRESHOLD");
+            return threshold;
+        }
+
+        private bool CheckExhaustion(GameServer server)
+        {
+            int result = server.random().Next(100);
             UnityEngine.Debug.Log("[Exhaustible Resources] Rolling random number. It is " + result.ToString());
 
-            if (result <= this.exhaustThreshold)
+            if (result <= this.GetExhaustThreshold(server))
             {
                 return true;
             }
