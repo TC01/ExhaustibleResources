@@ -3,8 +3,8 @@
 	<Entry>
 		<zType>EVENTGAME_EXHAUSTED_IRON</zType>
 		<Name>TEXT_EVENTGAME_EXHAUSTED_IRON</Name>
-		<Message></Message>
-		<MessageCenter>TEXT_EVENTGAME_EXHAUSTED_IRON_MESSAGE</MessageCenter>
+		<Message>TEXT_EVENTGAME_EXHAUSTED_IRON_MESSAGE</Message>
+		<MessageCenter>NONE</MessageCenter>
 		<MessageDelay>NONE</MessageDelay>
 		<Audio/>
 		<iDieRolls>0</iDieRolls>
@@ -20,8 +20,8 @@
 	<Entry>
 		<zType>EVENTGAME_EXHAUSTED_ALUMINUM</zType>
 		<Name>TEXT_EVENTGAME_EXHAUSTED_ALUMINUM</Name>
-		<Message></Message>
-		<MessageCenter>TEXT_EVENTGAME_EXHAUSTED_IRON_ALUMINUM</MessageCenter>
+		<Message>TEXT_EVENTGAME_EXHAUSTED_IRON_ALUMINUM</Message>
+		<MessageCenter>NONE</MessageCenter>
 		<MessageDelay>NONE</MessageDelay>
 		<Audio/>
 		<iDieRolls>0</iDieRolls>
@@ -37,8 +37,8 @@
 	<Entry>
 		<zType>EVENTGAME_EXHAUSTED_SILICON</zType>
 		<Name>TEXT_EVENTGAME_EXHAUSTED_SILICON</Name>
-		<Message></Message>
-		<MessageCenter>TEXT_EVENTGAME_EXHAUSTED_SILICON_MESSAGE</MessageCenter>
+		<Message>TEXT_EVENTGAME_EXHAUSTED_SILICON_MESSAGE</Message>
+		<MessageCenter>NONE</MessageCenter>
 		<MessageDelay>NONE</MessageDelay>
 		<Audio/>
 		<iDieRolls>0</iDieRolls>
@@ -54,8 +54,8 @@
 	<Entry>
 		<zType>EVENTGAME_EXHAUSTED_CARBON</zType>
 		<Name>TEXT_EVENTGAME_EXHAUSTED_CARBON</Name>
-		<Message></Message>
-		<MessageCenter>TEXT_EVENTGAME_EXHAUSTED_CARBON_MESSAGE</MessageCenter>
+		<Message>TEXT_EVENTGAME_EXHAUSTED_CARBON_MESSAGE</Message>
+		<MessageCenter>NONE</MessageCenter>
 		<MessageDelay>NONE</MessageDelay>
 		<Audio/>
 		<iDieRolls>0</iDieRolls>
@@ -71,8 +71,8 @@
 	<Entry>
 		<zType>EVENTGAME_EXHAUSTED_WATER</zType>
 		<Name>TEXT_EVENTGAME_EXHAUSTED_WATER</Name>
-		<Message></Message>
-		<MessageCenter>TEXT_EVENTGAME_EXHAUSTED_WATER_MESSAGE</MessageCenter>
+		<Message>TEXT_EVENTGAME_EXHAUSTED_WATER_MESSAGE</Message>
+		<MessageCenter>NONE</MessageCenter>
 		<MessageDelay>NONE</MessageDelay>
 		<Audio/>
 		<iDieRolls>0</iDieRolls>
